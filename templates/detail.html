@@ -1,0 +1,25 @@
+<h3>Treat</h3>
+
+<div class="btn-group">
+  <form action="/treats/{{.ID}}:delete" method="post">
+    <a href="/treats/{{.ID}}/edit" class="btn btn-primary btn-sm">
+      <i class="glyphicon glyphicon-edit"></i>
+      <span>Edit treat</span>
+    </a>
+    <button class="btn btn-danger btn-sm">
+      <i class="glyphicon glyphicon-trash"></i>
+      <span>Delete treat</span>
+    </button>
+  </form>
+</div>
+
+<div class="media">
+  <div class="media-left">
+    <img src="{{if .ImageURL}}{{.ImageURL}}{{else}}https://placekitten.com/g/200/300{{end}}">
+  </div>
+  <div class="media-body">
+    <h4>{{.Title}} <small>{{.PublishedDate}}</small></h4>
+    <h5>By {{if .Author}}{{.Author}}{{else}}unknown{{end}}</h5>
+    <p>{{.Description}}</p>
+  </div>
+</div>

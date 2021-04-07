@@ -1,0 +1,19 @@
+<h3>Treats</h3>
+<a href="/treats/add" class="btn btn-success btn-sm">
+  <i class="glyphicon glyphicon-plus"></i>
+  <span>Add treat</span>
+</a>
+
+{{range .}}
+<div class="media">
+  <div class="media-left">
+    <img src="{{if .ImageURL}}{{.ImageURL}}{{else}}https://placekitten.com/g/200/300{{end}}">
+  </div>
+  <div class="media-body">
+    <h4><a href="/treats/{{.ID}}">{{.Title}}</a></h4>
+    <p>{{.Author}}</p>
+  </div>
+</div>
+{{else}}
+<p>No treats found.</p>
+{{end}}
